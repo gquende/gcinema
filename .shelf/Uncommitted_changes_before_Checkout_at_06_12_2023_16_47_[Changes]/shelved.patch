@@ -1,0 +1,43 @@
+Index: lib/main.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import 'package:flutter/material.dart';\r\nimport 'package:gcinema/pages/home.dart';\r\nimport 'package:gcinema/pages/movies_page.dart';\r\n\r\nvoid main() {\r\n//  runApp(const MyApp());\r\n}\r\n\r\nclass App extends StatelessWidget {\r\n  const App({super.key});\r\n\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return const MaterialApp(\r\n      debugShowCheckedModeBanner: false,\r\n      home: MoviesPage(),\r\n    );\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lib/main.dart b/lib/main.dart
+--- a/lib/main.dart	(revision b3f15b0706f1a67335248c30db1ad67c4a66d8df)
++++ b/lib/main.dart	(date 1701877560725)
+@@ -11,9 +11,6 @@
+ 
+   @override
+   Widget build(BuildContext context) {
+-    return const MaterialApp(
+-      debugShowCheckedModeBanner: false,
+-      home: MoviesPage(),
+-    );
++    return const MaterialApp(debugShowCheckedModeBanner: false, home: Home());
+   }
+ }
+Index: lib/pages/home.dart
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import 'package:flutter/material.dart';\r\n\r\nclass Home extends StatefulWidget {\r\n  const Home({super.key});\r\n\r\n  @override\r\n  State<Home> createState() => _HomeState();\r\n}\r\n\r\nclass _HomeState extends State<Home> {\r\n  @override\r\n  Widget build(BuildContext context) {\r\n    return const Placeholder();\r\n  }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/lib/pages/home.dart b/lib/pages/home.dart
+--- a/lib/pages/home.dart	(revision b3f15b0706f1a67335248c30db1ad67c4a66d8df)
++++ b/lib/pages/home.dart	(date 1701877547278)
+@@ -10,6 +10,10 @@
+ class _HomeState extends State<Home> {
+   @override
+   Widget build(BuildContext context) {
+-    return const Placeholder();
++    return Scaffold(
++      body: Center(
++        child: Text("Testando..."),
++      ),
++    );
+   }
+ }
