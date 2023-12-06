@@ -3,7 +3,7 @@ import 'package:gcinema/pages/home.dart';
 import 'package:gcinema/pages/movies_page.dart';
 
 void main() {
-//  runApp(const MyApp());
+  runApp(const App());
 }
 
 class App extends StatelessWidget {

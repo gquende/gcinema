@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gcinema/pages/movies_view.dart';
 import 'package:gcinema/pages/widgets/dot_tab_indicator.dart';
 
 class MoviesPage extends StatefulWidget {
@@ -21,8 +22,9 @@ class _MoviesPageState extends State<MoviesPage>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black26,
       appBar: AppBar(
+        elevation: 0,
+        primary: false,
         bottom: TabBar(
           controller: _tabController,
           isScrollable: true,
@@ -42,7 +44,7 @@ class _MoviesPageState extends State<MoviesPage>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [Text("Test"), SizedBox.expand(), SizedBox.expand()],
+        children: [MoviesView(), SizedBox.expand(), SizedBox.expand()],
       ),
     );
   }

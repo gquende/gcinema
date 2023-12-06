@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class DotIndicatorPainter extends BoxPainter {
   const DotIndicatorPainter();
 
-  static const radius = 8.0;
+  static const radius = 10.0;
 
   @override
   void paint(Canvas canvas, Offset offset, ImageConfiguration configuration) {
