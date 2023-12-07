@@ -37,7 +37,7 @@ class _BookingPageState extends State<BookingPage>
         vsync: this,
       ),
     );
-    WidgetsBinding.instance?.addPostFrameCallback((_) async {
+    WidgetsBinding.instance.addPostFrameCallback((_) async {
       await _controller.buttonController.forward();
       await _controller.buttonController.reverse();
       await _controller.contentController.forward();
