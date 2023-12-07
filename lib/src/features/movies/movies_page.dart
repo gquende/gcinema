@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gcinema/pages/movies_view.dart';
-import 'package:gcinema/pages/widgets/dot_tab_indicator.dart';
+
+import 'widgets/widgets.dart';
 
 class MoviesPage extends StatefulWidget {
-  const MoviesPage({super.key});
+  const MoviesPage({Key? key}) : super(key: key);
 
   @override
   State<MoviesPage> createState() => _MoviesPageState();
@@ -23,29 +23,32 @@ class _MoviesPageState extends State<MoviesPage>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        elevation: 0,
-        primary: false,
         bottom: TabBar(
           controller: _tabController,
           isScrollable: true,
           indicator: const DotIndicator(),
-          tabs: [
-            Tab(
-              text: "Filmes",
-            ),
-            Tab(
-              text: "Séries",
-            ),
-            Tab(
-              text: "Shows",
-            )
+          tabs: const [
+            Tab(text: 'Movie'),
+            Tab(text: 'Series'),
+            Tab(text: 'TV Show'),
           ],
         ),
       ),
       body: TabBarView(
         controller: _tabController,
-        children: [MoviesView(), SizedBox.expand(), SizedBox.expand()],
+        physics: const NeverScrollableScrollPhysics(),
+        children: const [
+          MoviesView(),
+          SizedBox.expand(),
+          SizedBox.expand(),
+        ],
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
   }
 }
